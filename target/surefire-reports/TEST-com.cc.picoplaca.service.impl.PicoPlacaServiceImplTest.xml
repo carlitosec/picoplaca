@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.36" errors="0" skipped="0" tests="9" name="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest">
+<testsuite failures="0" time="0.269" errors="0" skipped="0" tests="9" name="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\tools\jdk\jdk7\jdk1.7.0_80\jre\bin"/>
@@ -63,13 +63,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.348" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdSaturday"/>
-  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateRightIdAnyMorningTime"/>
-  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateRightId"/>
-  <testcase time="0.004" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateWrongId"/>
-  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateRightIdAnyEveningTime"/>
-  <testcase time="0.004" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdSunday"/>
-  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdWrongEveningTimeAndDay"/>
-  <testcase time="0.004" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdRightTimeAndWrongDay"/>
+  <testcase time="0.253" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdWrongEveningTimeAndDay"/>
   <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdWrongMorningTimeAndDay"/>
+  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdRightTimeAndWrongDay"/>
+  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateRightIdAnyEveningTime"/>
+  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdSaturday"/>
+  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateRightIdAnyMorningTime"/>
+  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateIdSunday"/>
+  <testcase time="0" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateRightId"/>
+  <testcase time="0.016" classname="com.cc.picoplaca.service.impl.PicoPlacaServiceImplTest" name="validateWrongId"/>
 </testsuite>
