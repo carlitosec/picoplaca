@@ -2,6 +2,7 @@ package com.cc.picoplaca.service.impl;
 
 import java.sql.Time;
 
+import com.cc.picoplaca.beans.PicoPlacaBean;
 import com.cc.picoplaca.service.PicoPlacaService;
 import com.cc.picoplaca.util.Constants;
 import com.cc.picoplaca.util.DateUtils;
@@ -18,20 +19,17 @@ import com.cc.picoplaca.util.StringUtils;
  */
 public class PicoPlacaServiceImpl implements PicoPlacaService {
 
-	/* (non-Javadoc)
-	 * @see com.stackbuilder.picoplaca.service.PicoPlacaService#isAbleToBeOnRoad(java.lang.String, java.lang.String, java.lang.String)
-	 */
-	public Boolean isAbleToBeOnRoad(String id, String date, String time) {
+	public Boolean isAbleToBeOnRoad(PicoPlacaBean bean) {
 		
-		Integer day = DateUtils.getDayOfWeekFromDate(date);
+		Integer day = DateUtils.getDayOfWeekFromDate(bean.getDate());
 		
 		if (day < 0) {
 			return false;
 		}
 		
-		Integer lastDigit = StringUtils.getLastDigit(id);
+		Integer lastDigit = StringUtils.getLastDigit(bean.getCarId());
 		
-		Time parsedTime = DateUtils.getParsedTime(time);
+		Time parsedTime = DateUtils.getParsedTime(bean.getTime());
 		
 		String[] values = MapUtils.getDigitsFromDay(day).split(",");
 		
@@ -55,9 +53,6 @@ public class PicoPlacaServiceImpl implements PicoPlacaService {
 		return true;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.cc.picoplaca.service.PicoPlacaService#isValidId(java.lang.String)
-	 */
 	public Boolean isValidId(String id) {
 		return id.matches(Constants.REG_EXP_ID); 
 	}

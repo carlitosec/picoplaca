@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cc.picoplaca.beans.PicoPlacaBean;
 import com.cc.picoplaca.service.PicoPlacaService;
 import com.cc.picoplaca.service.impl.PicoPlacaServiceImpl;
 
@@ -17,6 +18,7 @@ import com.cc.picoplaca.service.impl.PicoPlacaServiceImpl;
 public class PicoPlacaServiceImplTest {
 	
 	private PicoPlacaService picoPlacaService;
+	private PicoPlacaBean bean;
 	
 	@Before
 	public void setUp() {
@@ -25,37 +27,44 @@ public class PicoPlacaServiceImplTest {
 	
 	@Test
 	public void validateRightIdAnyMorningTime() {
-		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad("PBA3212", "24/10/2017", "09:00"));
+		bean = new PicoPlacaBean("PBA3212", "24/10/2017", "09:00");
+		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test
 	public void validateRightIdAnyEveningTime() {
-		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad("PBA3212", "24/10/2017", "19:00"));
+		bean = new PicoPlacaBean("PBA3212", "24/10/2017", "19:00");
+		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test
 	public void validateIdWrongMorningTimeAndDay() {
-		Assert.assertFalse(picoPlacaService.isAbleToBeOnRoad("PBA3212", "23/10/2017", "08:00"));
+		bean = new PicoPlacaBean("PBA3212", "23/10/2017", "08:00");
+		Assert.assertFalse(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test
 	public void validateIdWrongEveningTimeAndDay() {
-		Assert.assertFalse(picoPlacaService.isAbleToBeOnRoad("PBA3212", "23/10/2017", "17:00"));
+		bean = new PicoPlacaBean("PBA3212", "23/10/2017", "17:00");
+		Assert.assertFalse(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test
 	public void validateIdRightTimeAndWrongDay() {
-		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad("PBA3212", "23/10/2017", "10:00"));
+		bean = new PicoPlacaBean("PBA3212", "23/10/2017", "10:00");
+		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test
 	public void validateIdSaturday() {
-		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad("PBA3212", "14/10/2017", "08:00"));
+		bean = new PicoPlacaBean("PBA3212", "14/10/2017", "08:00");
+		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test
 	public void validateIdSunday() {
-		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad("PBA3212", "15/10/2017", "08:00"));
+		bean = new PicoPlacaBean("PBA3212", "15/10/2017", "08:00");
+		Assert.assertTrue(picoPlacaService.isAbleToBeOnRoad(bean));
 	}
 	
 	@Test

@@ -5,6 +5,7 @@ package com.cc.picoplaca.main;
 
 import java.util.Scanner;
 
+import com.cc.picoplaca.beans.PicoPlacaBean;
 import com.cc.picoplaca.service.PicoPlacaService;
 import com.cc.picoplaca.service.impl.PicoPlacaServiceImpl;
 
@@ -36,7 +37,9 @@ public class Main {
 			in.close();
 		}
 		
-		if (service.isAbleToBeOnRoad(id, date, time)) {
+		PicoPlacaBean bean = new PicoPlacaBean(id, date, time);
+		
+		if (service.isAbleToBeOnRoad(bean)) {
 			System.out.println("Your car can be on the road");
 		} else {
 			System.out.println("Your car can NOT be on the road");
